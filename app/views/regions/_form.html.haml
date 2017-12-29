@@ -16,7 +16,7 @@
 
   .form-group.row
     = f.label 'Municipios', class: 'label col-sm-2'
-    = f.select :municipalities, Municipality.all.collect {|m| [ m.name, m.id ] }, {}, {class: 'form-control col-sm-4', multiple: true, required: true, include_blank: false}
+    = f.select :municipalities, Municipality.all.collect {|m| [ m.name, m.id ] }, {}, {class: 'form-control col-sm-4', multiple: true, include_blank: false, selected: [@region.municipalities.collect(&:id)] }
   
   .actions
     = f.submit 'Guardar', class: 'btn btn-success btn-sm'

@@ -11,7 +11,7 @@
   = @municipality.get_state
 %p
   %b Regiones:
-  = @municipality.regions
+  = regions_names(@municipality)
 
 %hr
 = link_to 'Edit', edit_municipality_path(@municipality)

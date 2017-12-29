@@ -7,6 +7,11 @@
   %b Nombre:
   = @region.name
 
+%p
+  %b Municipios:
+  = municipalities_names(@region)
+
+
 %hr
 = link_to 'Edit', edit_region_path(@region)
 = link_to 'Volver', regions_path
