@@ -13,4 +13,12 @@
 //= require jquery
 //= require rails-ujs
 //= require bootstrap-sprockets
+//= require select2
+//= require select2_locale_es
 //= require_tree .
+
+$(document).ready(function() {
+  $( "#region_municipalities" ).select2({
+    theme: "bootstrap"
+  });
+});
