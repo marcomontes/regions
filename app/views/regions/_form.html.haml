@@ -1,0 +1,16 @@
+= form_for @region do |f|
+  - if @region.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@region.errors.count, "error")} prohibited this region from being saved:"
+      %ul
+        - @region.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :numeric_code
+    = f.number_field :numeric_code
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save'
