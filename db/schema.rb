@@ -23,18 +23,18 @@ ActiveRecord::Schema.define(version: 20171229143350) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "municipalities_regions", force: :cascade do |t|
+    t.bigint "region_id"
+    t.bigint "municipality_id"
+    t.index ["municipality_id"], name: "index_municipalities_regions_on_municipality_id"
+    t.index ["region_id"], name: "index_municipalities_regions_on_region_id"
+  end
+
   create_table "regions", force: :cascade do |t|
     t.integer "numeric_code"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "regions_municipalities", force: :cascade do |t|
-    t.bigint "region_id"
-    t.bigint "municipality_id"
-    t.index ["municipality_id"], name: "index_regions_municipalities_on_municipality_id"
-    t.index ["region_id"], name: "index_regions_municipalities_on_region_id"
   end
 
 end
