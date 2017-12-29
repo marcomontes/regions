@@ -7,10 +7,16 @@
           %li= message
 
   .form-group.row
-    = f.label 'Código', class: 'label col-sm-1'
+    = f.label 'Código', class: 'label col-sm-2'
     = f.number_field :numeric_code, class: 'form-control col-sm-4'
+  
   .form-group.row
-    = f.label 'Nombre', class: 'label col-sm-1'
+    = f.label 'Nombre', class: 'label col-sm-2'
     = f.text_field :name, class: 'form-control col-sm-4'
+
+  .form-group.row
+    = f.label 'Municipios', class: 'label col-sm-2'
+    = f.select :municipalities, Municipality.all.collect {|m| [ m.name, m.id ] }, {}, {class: 'form-control col-sm-4', multiple: true, required: true, include_blank: false}
+  
   .actions
     = f.submit 'Guardar', class: 'btn btn-success btn-sm'

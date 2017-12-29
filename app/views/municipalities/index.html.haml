@@ -15,7 +15,9 @@
         %td= municipality.numeric_code
         %td= municipality.name
         %td= municipality.get_state
-        %td= municipality.regions
+        %td
+          - municipality.regions.each do |region|
+            = link_to region.name, region, class: 'btn btn-primary btn-sm'
         %td= link_to 'Ver', municipality
         %td= link_to 'Editar', edit_municipality_path(municipality)
         %td= link_to 'Eliminar', municipality, method: :delete, data: { confirm: 'Está seguro?' }

@@ -5,6 +5,7 @@
     %tr
       %th CÓDIGO NUMÉRICO
       %th NOMBRE
+      %th MUNICIPIOS
       %th{colspan: 3} OPCIONES
 
   %tbody
@@ -12,6 +13,9 @@
       %tr
         %td= region.numeric_code
         %td= region.name
+        %td
+          - region.municipalities.each do |m| 
+            = link_to m.name, m, class: 'btn btn-primary btn-sm'
         %td= link_to 'Ver', region
         %td= link_to 'Editar', edit_region_path(region)
         %td= link_to 'Eliminar', region, method: :delete, data: { confirm: 'Está seguro?' }

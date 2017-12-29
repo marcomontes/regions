@@ -8,12 +8,15 @@
 
   .form-group.row
     = f.label 'Código', class: 'label col-sm-1'
-    = f.number_field :numeric_code, class: 'form-control col-sm-4'
+    = f.number_field :numeric_code, class: 'form-control col-sm-4', required: true
+  
   .form-group.row
     = f.label 'Nombre', class: 'label col-sm-1'
-    = f.text_field :name, class: 'form-control col-sm-4'
+    = f.text_field :name, class: 'form-control col-sm-4', required: true
+  
   .form-group.row
     = f.label 'Estado', class: 'label col-sm-1'
     = f.check_box :state, class: 'form-control col-sm-4'
+  
   .actions
     = f.submit 'Guardar', class: 'btn btn-success btn-sm'
