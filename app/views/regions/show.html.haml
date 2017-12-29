@@ -1,12 +1,12 @@
-%p#notice= notice
+%h3 REGION
 
 %p
-  %b Numeric code:
+  %b Código:
   = @region.numeric_code
 %p
-  %b Name:
+  %b Nombre:
   = @region.name
 
+%hr
 = link_to 'Edit', edit_region_path(@region)
-\|
-= link_to 'Back', regions_path
+= link_to 'Volver', regions_path

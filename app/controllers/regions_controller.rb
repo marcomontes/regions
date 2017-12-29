@@ -19,7 +19,7 @@ class RegionsController < ApplicationController
     @region = Region.new(region_params)
 
     if @region.save
-      redirect_to @region, notice: 'Region was successfully created.'
+      redirect_to regions_url, notice: 'Región creada correctamente.'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class RegionsController < ApplicationController
 
   def update
     if @region.update(region_params)
-      redirect_to @region, notice: 'Region was successfully updated.'
+      redirect_to regions_url, notice: 'Región actualizada correctamente.'
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class RegionsController < ApplicationController
 
   def destroy
     @region.destroy
-    redirect_to regions_url, notice: 'Region was successfully destroyed.'
+    redirect_to regions_url, notice: 'Región eliminada correctamente.'
   end
 
   private

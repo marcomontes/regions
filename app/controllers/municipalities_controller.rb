@@ -19,7 +19,7 @@ class MunicipalitiesController < ApplicationController
     @municipality = Municipality.new(municipality_params)
 
     if @municipality.save
-      redirect_to @municipality, notice: 'Municipality was successfully created.'
+      redirect_to municipalities_url, notice: 'Municipio creado correctamente.'
     else
       render :new
     end
@@ -27,7 +27,7 @@ class MunicipalitiesController < ApplicationController
 
   def update
     if @municipality.update(municipality_params)
-      redirect_to @municipality, notice: 'Municipality was successfully updated.'
+      redirect_to municipalities_url, notice: 'Municipio actualizado correctamente.'
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class MunicipalitiesController < ApplicationController
 
   def destroy
     @municipality.destroy
-    redirect_to municipalities_url, notice: 'Municipality was successfully destroyed.'
+    redirect_to municipalities_url, notice: 'Municipio eliminado correctamente.'
   end
 
   private

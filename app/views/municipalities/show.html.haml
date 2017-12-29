@@ -1,15 +1,18 @@
-%p#notice= notice
+%h3 MUNICIPIO
 
 %p
-  %b Numeric code:
+  %b Código:
   = @municipality.numeric_code
 %p
-  %b Name:
+  %b Nombre:
   = @municipality.name
 %p
-  %b State:
-  = @municipality.state
+  %b Estado:
+  = @municipality.get_state
+%p
+  %b Regiones:
+  = @municipality.regions
 
+%hr
 = link_to 'Edit', edit_municipality_path(@municipality)
-\|
-= link_to 'Back', municipalities_path
+= link_to 'Volver', municipalities_path
