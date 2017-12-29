@@ -29,6 +29,7 @@ class RegionsController < ApplicationController
 
   def update
     if @region.update(region_params)
+      @region.update_municipalities(@municipalities)
       redirect_to regions_url, notice: 'Región actualizada correctamente.'
     else
       render :edit
